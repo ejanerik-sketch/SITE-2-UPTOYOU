@@ -8,9 +8,14 @@ export const COLORS = {
   grey: '#77736f',
 };
 
-// Placeholder for the project logo. 
-// Ideally, this should be replaced with the actual asset path, e.g., '/assets/logo.png'
-export const LOGO_URL = "https://placehold.co/600x250/white/333?text=Projeto+UPTOYOU";
+// Speaker Photo Direct Link
+export const SPEAKER_PHOTO_URL = "https://janerik.com.br/wp-content/uploads/2025/11/PADRE-JOSE.jpg";
+
+// Logo Placeholder - High Contrast (Red Text) to be visible on dark Hero
+export const LOGO_URL = "https://janerik.com.br/wp-content/uploads/2025/11/LOGO_UPTOYOU-03.png";
+
+// Logo for Scrolled Navbar (White Background)
+export const LOGO_SCROLLED_URL = "https://janerik.com.br/wp-content/uploads/2025/11/LOGO_UPTOYOU-02.png";
 
 export const NAV_LINKS = [
   { label: 'Programação', href: '#schedule' },

@@ -4,7 +4,7 @@ import { FormType } from '../types';
 import FadeIn from './FadeIn';
 import { useContent } from '../context/ContentContext';
 import EditableText from './EditableText';
-import { Download, Mail } from 'lucide-react';
+import { MessageCircle } from 'lucide-react';
 
 const RegistrationForm: React.FC = () => {
   const [activeTab, setActiveTab] = useState<FormType>(FormType.PF);
@@ -46,7 +46,7 @@ const RegistrationForm: React.FC = () => {
     jobFunctionOther: '',
     institution: '',
     experience: '',
-    level: '', // Education level worked with
+    level: [] as string[], // Changed to array for multiple choice
     knowledgeEI: '', // Yes/No
     knowledgeEIDesc: '',
     knowledgeNeuro: '', // Yes/No
@@ -90,40 +90,13 @@ const RegistrationForm: React.FC = () => {
     }
   };
 
-  // Generate CSV Content
-  const generateCSV = () => {
-    let csvContent = "data:text/csv;charset=utf-8,";
-    const data = activeTab === FormType.PJ ? pjData : pfData;
-    
-    // Header
-    csvContent += Object.keys(data).join(",") + "\n";
-    // Row
-    const row = Object.values(data).map(value => {
-        if (Array.isArray(value)) return `"${value.join('; ')}"`;
-        return `"${String(value).replace(/"/g, '""')}"`; // Escape quotes
-    }).join(",");
-    csvContent += row;
-
-    const encodedUri = encodeURI(csvContent);
-    const link = document.createElement("a");
-    link.setAttribute("href", encodedUri);
-    link.setAttribute("download", `inscricao_${activeTab === FormType.PJ ? 'instituicao' : 'individual'}_uptoyou.csv`);
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  };
-
-  // Handle Submit (Mailto)
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    
-    const recipient = "inscricoes@uptoyouitabuna.com";
-    const subject = `Inscrição UpToYou - ${activeTab === FormType.PJ ? 'Institucional' : 'Individual'}`;
-    
+  // Construct the message string for WhatsApp
+  const getFormattedMessage = () => {
     let body = "";
 
     if (activeTab === FormType.PJ) {
-      body += `DADOS INSTITUCIONAIS\n`;
+      body += `*INSCRIÇÃO UPTOYOU - INSTITUCIONAL*\n\n`;
+      body += `*DADOS INSTITUCIONAIS*\n`;
       body += `Instituição: ${pjData.institutionName}\n`;
       body += `Tipo: ${pjData.institutionType}\n`;
       body += `Etapas: ${pjData.stages.join(', ')}\n`;
@@ -132,47 +105,52 @@ const RegistrationForm: React.FC = () => {
       body += `Telefone: ${pjData.phone}\n`;
       body += `Email: ${pjData.email}\n`;
       body += `Site: ${pjData.site}\n\n`;
-      body += `RESPONSÁVEL\n`;
+      body += `*RESPONSÁVEL*\n`;
       body += `Nome: ${pjData.managerName}\n`;
       body += `Cargo: ${pjData.managerRole}\n`;
       body += `WhatsApp: ${pjData.managerPhone}\n`;
       body += `Email Pessoal: ${pjData.managerEmail}\n\n`;
-      body += `NECESSIDADES\n`;
+      body += `*NECESSIDADES*\n`;
       body += `Motivação: ${pjData.motivation}\n`;
       body += `Desafios: ${pjData.challenges.join(', ')} ${pjData.challengesOther ? `(${pjData.challengesOther})` : ''}\n`;
       body += `Projeto Existente: ${pjData.hasProject} - ${pjData.projectName}\n\n`;
-      body += `EXPECTATIVAS\n`;
+      body += `*EXPECTATIVAS*\n`;
       body += `Expectativa: ${pjData.expectations}\n`;
       body += `Formação Professores: ${pjData.teacherTraining}\n`;
       body += `Modalidade: ${pjData.modality}\n`;
     } else {
-      body += `DADOS PESSOAIS\n`;
+      body += `*INSCRIÇÃO UPTOYOU - INDIVIDUAL*\n\n`;
+      body += `*DADOS PESSOAIS*\n`;
       body += `Nome: ${pfData.fullName}\n`;
       body += `CPF: ${pfData.cpf}\n`;
       body += `Nascimento: ${pfData.dob}\n`;
       body += `WhatsApp: ${pfData.phone}\n`;
       body += `Email: ${pfData.email}\n`;
       body += `Cidade/UF: ${pfData.location}\n\n`;
-      body += `PROFISSIONAL\n`;
+      body += `*PROFISSIONAL*\n`;
       body += `Função: ${pfData.jobFunction === 'Outro' ? pfData.jobFunctionOther : pfData.jobFunction}\n`;
       body += `Instituição: ${pfData.institution}\n`;
       body += `Experiência: ${pfData.experience}\n`;
-      body += `Nível: ${pfData.level}\n\n`;
-      body += `CONHECIMENTO\n`;
+      body += `Nível: ${pfData.level.join(', ')}\n\n`;
+      body += `*CONHECIMENTO*\n`;
       body += `Conhecimento IE: ${pfData.knowledgeEI} - ${pfData.knowledgeEIDesc}\n`;
       body += `Conhecimento Neuro: ${pfData.knowledgeNeuro} - ${pfData.knowledgeNeuroDesc}\n`;
       body += `Temas de Interesse: ${pfData.interests.join(', ')}\n\n`;
-      body += `EXPECTATIVAS\n`;
+      body += `*EXPECTATIVAS*\n`;
       body += `Objetivo: ${pfData.objective}\n`;
       body += `Modalidade: ${pfData.modality}\n`;
       body += `Horário: ${pfData.timePreference}\n`;
     }
+    return body;
+  };
 
-    // Generate Table (CSV) automatically on submit
-    generateCSV();
-
-    // Open Mail Client
-    window.location.href = `mailto:${recipient}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  // Handle WhatsApp Submit
+  const handleWhatsAppSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    const message = getFormattedMessage();
+    const phoneNumber = "5573999833058";
+    const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+    window.open(url, '_blank');
   };
 
   return (
@@ -205,7 +183,7 @@ const RegistrationForm: React.FC = () => {
           </div>
 
           <div className="p-8">
-            <form onSubmit={handleSubmit} className="space-y-8 animate-fade-in">
+            <form className="space-y-8 animate-fade-in">
               
               {/* --- FORMULÁRIO PJ --- */}
               {activeTab === FormType.PJ && (
@@ -513,11 +491,11 @@ const RegistrationForm: React.FC = () => {
                     </div>
 
                     <div>
-                        <span className="text-gray-700 font-semibold block mb-2">Nível de ensino com que trabalha:</span>
+                        <span className="text-gray-700 font-semibold block mb-2">Nível de ensino com que trabalha: (Multipla escolha)</span>
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm">
                             {['Educação Infantil', 'Fundamental I', 'Fundamental II', 'Ensino Médio', 'Não atuo diretamente com sala de aula'].map(opt => (
                                 <label key={opt} className="flex items-center gap-2">
-                                    <input type="radio" name="level" required checked={pfData.level === opt} onChange={() => handleChange('PF', 'level', opt)} className="accent-brand-green" />
+                                    <input type="checkbox" checked={pfData.level.includes(opt)} onChange={() => handleCheckbox('PF', 'level', opt)} className="accent-brand-green" />
                                     {opt}
                                 </label>
                             ))}
@@ -623,9 +601,12 @@ const RegistrationForm: React.FC = () => {
                 </>
               )}
 
-              <div className="space-y-4 pt-4">
-                <button type="submit" className={`w-full ${activeTab === FormType.PF ? 'bg-brand-green hover:bg-green-700' : 'bg-brand-red hover:bg-red-700'} text-white font-bold py-4 rounded-lg shadow-lg transition-transform transform hover:scale-[1.01] flex items-center justify-center gap-2`}>
-                  <Mail size={20} /> ENVIAR INSCRIÇÃO POR E-MAIL
+              <div className="space-y-4 pt-4 flex flex-col items-center">
+                <button 
+                  onClick={handleWhatsAppSubmit}
+                  className="w-full bg-[#25D366] hover:bg-[#1da851] text-white font-bold py-4 rounded-lg shadow-lg transition-transform transform hover:scale-[1.01] flex items-center justify-center gap-2 text-lg"
+                >
+                  <MessageCircle size={24} /> ENVIAR PELO WHATSAPP
                 </button>
               </div>
             </form>

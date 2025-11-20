@@ -1,6 +1,7 @@
+
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
-import { NAV_LINKS, COLORS } from '../constants';
+import { NAV_LINKS, LOGO_SCROLLED_URL } from '../constants';
 import { useContent } from '../context/ContentContext';
 import EditableImage from './EditableImage';
 
@@ -47,16 +48,17 @@ const Navbar: React.FC = () => {
     >
       <div className="container mx-auto px-4 flex justify-between items-center">
         {/* Logo Area */}
-        <div className="w-32 md:w-40 cursor-pointer" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+        <div className="w-40 md:w-48 cursor-pointer" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
              <EditableImage 
                 section="hero"
                 imageField="logoUrl"
                 widthField="logoWidth"
-                imageUrl={content.hero.logoUrl}
-                widthValue={isScrolled ? 120 : 150} // Smaller logo on scroll
+                // Swap URL based on scroll state
+                imageUrl={isScrolled ? LOGO_SCROLLED_URL : content.hero.logoUrl}
+                widthValue={isScrolled ? 140 : 180} 
                 alt="Projeto UpToYou"
                 style={{ objectFit: 'contain' }}
-                allowResize={false} // Disable resize in navbar to prevent layout breaks
+                allowResize={false}
             />
         </div>
 

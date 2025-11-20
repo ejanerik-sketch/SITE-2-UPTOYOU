@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { MapPin } from 'lucide-react';
 import FadeIn from './FadeIn';
@@ -40,12 +41,13 @@ const Location: React.FC = () => {
       <FadeIn className="w-full md:w-2/3 h-full" direction="right">
         <div className="w-full h-full bg-gray-200">
             <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3836.239925374564!2d-39.2768204851429!3d-14.785163989685515!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x739aa680197330b%3A0x931778077030914f!2sPar%C3%B3quia%20S%C3%A3o%20Judas%20Tadeu!5e0!3m2!1spt-BR!2sbr!4v1710000000000!5m2!1spt-BR!2sbr" 
+                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d9322.80748746854!2d-39.27682!3d-14.785164!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x739aa644e5c0709%3A0x671c103e71569775!2sSal%C3%A3o%20Paroquial%20S%C3%A3o%20Judas%20Tadeu!5e1!3m2!1spt-BR!2sbr!4v1763671598382!5m2!1spt-BR!2sbr" 
                 width="100%" 
                 height="100%" 
                 style={{ border: 0 }} 
                 allowFullScreen 
                 loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
                 title="Mapa do evento"
             ></iframe>
         </div>

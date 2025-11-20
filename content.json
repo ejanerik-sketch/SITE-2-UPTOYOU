@@ -1,9 +1,10 @@
+
 {
   "hero": {
     "title": "Educação Emocional Internacional",
     "highlight": "Chega a Itabuna",
     "subtitle": "3 Eventos Transformadores com Prof. José Víctor Orón Semper",
-    "logoUrl": "https://placehold.co/600x250/white/333?text=Projeto+UPTOYOU",
+    "logoUrl": "https://janerik.com.br/wp-content/uploads/2025/11/LOGO_UPTOYOU-03.png",
     "logoWidth": 300,
     "footerLogoWidth": 150
   },
@@ -14,7 +15,7 @@
     "event1_time": "19h",
     "event1_location": "Auditório Bento XVI - Paróquia São Judas Tadeu",
     "event1_theme": "Educar para o Encontro com o Outro",
-    "event1_audience": "Donos de escola, diretores, professores, psicólogos",
+    "event1_audience": "Donos de escola, diretores, coordenadores, professores, psicólogos, psicopedagogos e afins.",
     "event1_duration": "1h30min a 2h",
     "event1_cta": "Inscrever-se na Conferência",
     "event2_title": "Mesa Redonda",
@@ -22,7 +23,7 @@
     "event2_time": "19h às 21h",
     "event2_location": "Auditório Bento XVI - Paróquia São Judas Tadeu",
     "event2_theme": "Debate com diretores de escolas",
-    "event2_audience": "Diretores e gestores educacionais",
+    "event2_audience": "Donos de escola, diretores, coordenadores, professores, psicólogos, psicopedagogos e afins.",
     "event2_duration": "2h",
     "event2_cta": "Inscrever-se na Mesa Redonda",
     "event3_title": "Oficina Prática",
@@ -30,7 +31,7 @@
     "event3_time": "19h às 22h",
     "event3_location": "Auditório Bento XVI - Paróquia São Judas Tadeu",
     "event3_theme": "Conheça o que Sente - Vocabulário Emocional",
-    "event3_audience": "Educadores, professores, coordenadores",
+    "event3_audience": "Donos de escola, diretores, coordenadores, professores, psicólogos, psicopedagogos e afins.",
     "event3_duration": "3h",
     "event3_cta": "Inscrever-se na Oficina"
   },
@@ -38,7 +39,7 @@
     "name": "Padre José Víctor Orón Semper",
     "role": "O Especialista",
     "bio": "Sacerdote Escolapio e pesquisador dedicado, José Víctor combina uma sólida formação acadêmica com 15 anos de experiência prática em sala de aula. É referência internacional em Educação Emocional, defendendo uma abordagem que coloca o relacionamento interpessoal no centro do desenvolvimento humano.",
-    "photoUrl": "https://picsum.photos/seed/speaker/500/600",
+    "photoUrl": "https://janerik.com.br/wp-content/uploads/2025/11/PADRE-JOSE.jpg",
     "photoWidth": 400,
     "highlight1_title": "47 Obras Publicadas",
     "highlight1_desc": "Vasta produção bibliográfica na área.",
@@ -52,7 +53,7 @@
   "methodology": {
     "title": "O Que é o UpToYou?",
     "description": "\"Acompanhando o Crescimento - Renovar a educação melhorando a qualidade educativa e pessoal do educador\"",
-    "videoId": "Mpn_AdkbnrA",
+    "videoId": "qU_voG6JtrE",
     "pillar1_title": "Foco na Pessoa",
     "pillar1_desc": "Não no sistema, mas no ser humano.",
     "pillar2_title": "Educação Relacional",

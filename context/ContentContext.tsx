@@ -1,5 +1,6 @@
+
 import React, { createContext, useContext, useState, useEffect } from 'react';
-import { LOGO_URL, FAQ_DATA } from '../constants';
+import { LOGO_URL, FAQ_DATA, SPEAKER_PHOTO_URL } from '../constants';
 
 // Helper to flatten initial FAQ data
 const initialFaqContent = FAQ_DATA.reduce((acc, item, index) => {
@@ -26,7 +27,7 @@ const defaultContent = {
     event1_time: "19h",
     event1_location: "Auditório Bento XVI - Paróquia São Judas Tadeu",
     event1_theme: "Educar para o Encontro com o Outro",
-    event1_audience: "Donos de escola, diretores, professores, psicólogos",
+    event1_audience: "Donos de escola, diretores, coordenadores, professores, psicólogos, psicopedagogos e afins.",
     event1_duration: "1h30min a 2h",
     event1_cta: "Inscrever-se na Conferência",
     // Event 2
@@ -35,7 +36,7 @@ const defaultContent = {
     event2_time: "19h às 21h",
     event2_location: "Auditório Bento XVI - Paróquia São Judas Tadeu",
     event2_theme: "Debate com diretores de escolas",
-    event2_audience: "Diretores e gestores educacionais",
+    event2_audience: "Donos de escola, diretores, coordenadores, professores, psicólogos, psicopedagogos e afins.",
     event2_duration: "2h",
     event2_cta: "Inscrever-se na Mesa Redonda",
     // Event 3
@@ -44,7 +45,7 @@ const defaultContent = {
     event3_time: "19h às 22h",
     event3_location: "Auditório Bento XVI - Paróquia São Judas Tadeu",
     event3_theme: "Conheça o que Sente - Vocabulário Emocional",
-    event3_audience: "Educadores, professores, coordenadores",
+    event3_audience: "Donos de escola, diretores, coordenadores, professores, psicólogos, psicopedagogos e afins.",
     event3_duration: "3h",
     event3_cta: "Inscrever-se na Oficina",
   },
@@ -52,7 +53,7 @@ const defaultContent = {
     name: "Padre José Víctor Orón Semper",
     role: "O Especialista",
     bio: "Sacerdote Escolapio e pesquisador dedicado, José Víctor combina uma sólida formação acadêmica com 15 anos de experiência prática em sala de aula. É referência internacional em Educação Emocional, defendendo uma abordagem que coloca o relacionamento interpessoal no centro do desenvolvimento humano.",
-    photoUrl: "https://picsum.photos/seed/speaker/500/600",
+    photoUrl: SPEAKER_PHOTO_URL,
     photoWidth: 400, // default width in px
     
     // Highlights
@@ -68,7 +69,7 @@ const defaultContent = {
   methodology: {
     title: "O Que é o UpToYou?",
     description: "\"Acompanhando o Crescimento - Renovar a educação melhorando a qualidade educativa e pessoal do educador\"",
-    videoId: "Mpn_AdkbnrA", // YouTube ID
+    videoId: "qU_voG6JtrE", // Updated YouTube ID
     pillar1_title: "Foco na Pessoa",
     pillar1_desc: "Não no sistema, mas no ser humano.",
     pillar2_title: "Educação Relacional",
@@ -128,7 +129,7 @@ const ContentContext = createContext<ContentContextType | undefined>(undefined);
 
 export const ContentProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [content, setContent] = useState(defaultContent);
-  const [isEditing, setIsEditing] = useState(false);
+  const [isEditing, setIsEditing] = useState(false); // Editing disabled by default
 
   // Load content strategy:
   // 1. Check for Window Variable (WordPress Injection) - highest priority for static exports

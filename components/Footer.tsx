@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Instagram, Mail, Phone } from 'lucide-react';
 import { useContent } from '../context/ContentContext';
@@ -12,15 +13,16 @@ const Footer: React.FC = () => {
       <div className="container mx-auto max-w-6xl">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
           <div>
-            <div className="mb-6 w-fit rounded-xl">
+            <div className="mb-6 w-fit rounded-xl bg-white/10 p-2">
                 <EditableImage 
                     section="hero"
                     imageField="logoUrl"
                     widthField="footerLogoWidth"
                     imageUrl={content.hero.logoUrl}
-                    widthValue={content.hero.footerLogoWidth}
+                    widthValue={200}
                     alt="Projeto UpToYou"
                     className="object-contain"
+                    allowResize={false}
                 />
             </div>
             <div className="text-gray-300">
@@ -57,7 +59,7 @@ const Footer: React.FC = () => {
         </div>
 
         <div className="border-t border-white/10 pt-8 text-center text-sm text-gray-400">
-          <p>&copy; 2024 UpToYou Itabuna. Todos os direitos reservados.</p>
+          <p>&copy; 2025 UpToYou Itabuna. Todos os direitos reservados.</p>
         </div>
       </div>
     </footer>
