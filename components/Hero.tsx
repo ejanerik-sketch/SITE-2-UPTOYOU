@@ -14,7 +14,7 @@ const Hero: React.FC = () => {
   };
 
   return (
-    <section className="relative w-full min-h-screen flex flex-col justify-center items-center text-center px-4 overflow-hidden pt-20 md:pt-0">
+    <section className="relative w-full min-h-screen flex flex-col justify-center items-center text-center px-4 overflow-hidden pt-32 md:pt-40">
       {/* Background Image with Overlay */}
       <div 
         className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
@@ -23,9 +23,9 @@ const Hero: React.FC = () => {
       <div className="absolute inset-0 z-0 bg-gradient-to-b from-brand-green/90 to-brand-green/80 mix-blend-multiply" />
 
       {/* Content */}
-      <div className="relative z-10 max-w-5xl mx-auto text-white flex flex-col items-center">
+      <div className="relative z-10 max-w-5xl mx-auto text-white flex flex-col items-center mt-10">
         
-        <div className="inline-flex items-center gap-2 bg-brand-yellow text-brand-grey font-bold px-4 py-1 rounded-full mb-6 text-sm md:text-base animate-fade-in-up mt-10 md:mt-0">
+        <div className="inline-flex items-center gap-2 bg-brand-yellow text-brand-grey font-bold px-4 py-1 rounded-full mb-6 text-sm md:text-base animate-fade-in-up">
           <Calendar className="w-4 h-4" />
           <span>15, 16 e 17 de Dezembro</span>
         </div>

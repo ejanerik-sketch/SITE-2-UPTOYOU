@@ -1,0 +1,113 @@
+{
+  "hero": {
+    "title": "Educação Emocional Internacional",
+    "highlight": "Chega a Itabuna",
+    "subtitle": "3 Eventos Transformadores com Prof. José Víctor Orón Semper",
+    "logoUrl": "https://placehold.co/600x250/white/333?text=Projeto+UPTOYOU",
+    "logoWidth": 300,
+    "footerLogoWidth": 150
+  },
+  "schedule": {
+    "title": "Programação Completa",
+    "event1_title": "Conferência Magna",
+    "event1_date": "15 Dez (Seg)",
+    "event1_time": "19h",
+    "event1_location": "Auditório Bento XVI - Paróquia São Judas Tadeu",
+    "event1_theme": "Educar para o Encontro com o Outro",
+    "event1_audience": "Donos de escola, diretores, professores, psicólogos",
+    "event1_duration": "1h30min a 2h",
+    "event1_cta": "Inscrever-se na Conferência",
+    "event2_title": "Mesa Redonda",
+    "event2_date": "16 Dez (Ter)",
+    "event2_time": "19h às 21h",
+    "event2_location": "Auditório Bento XVI - Paróquia São Judas Tadeu",
+    "event2_theme": "Debate com diretores de escolas",
+    "event2_audience": "Diretores e gestores educacionais",
+    "event2_duration": "2h",
+    "event2_cta": "Inscrever-se na Mesa Redonda",
+    "event3_title": "Oficina Prática",
+    "event3_date": "17 Dez (Qua)",
+    "event3_time": "19h às 22h",
+    "event3_location": "Auditório Bento XVI - Paróquia São Judas Tadeu",
+    "event3_theme": "Conheça o que Sente - Vocabulário Emocional",
+    "event3_audience": "Educadores, professores, coordenadores",
+    "event3_duration": "3h",
+    "event3_cta": "Inscrever-se na Oficina"
+  },
+  "speaker": {
+    "name": "Padre José Víctor Orón Semper",
+    "role": "O Especialista",
+    "bio": "Sacerdote Escolapio e pesquisador dedicado, José Víctor combina uma sólida formação acadêmica com 15 anos de experiência prática em sala de aula. É referência internacional em Educação Emocional, defendendo uma abordagem que coloca o relacionamento interpessoal no centro do desenvolvimento humano.",
+    "photoUrl": "https://picsum.photos/seed/speaker/500/600",
+    "photoWidth": 400,
+    "highlight1_title": "47 Obras Publicadas",
+    "highlight1_desc": "Vasta produção bibliográfica na área.",
+    "highlight2_title": "Multidisciplinar",
+    "highlight2_desc": "Dr. em Educação, Máster em Neurociência e Bioética, Eng. de Caminhos.",
+    "highlight3_title": "Liderança",
+    "highlight3_desc": "Diretor do Centro SLAM e da Fundação UpToYou.",
+    "highlight4_title": "Atuação Global",
+    "highlight4_desc": "Espanha, Camerún, México, Colômbia e Brasil."
+  },
+  "methodology": {
+    "title": "O Que é o UpToYou?",
+    "description": "\"Acompanhando o Crescimento - Renovar a educação melhorando a qualidade educativa e pessoal do educador\"",
+    "videoId": "Mpn_AdkbnrA",
+    "pillar1_title": "Foco na Pessoa",
+    "pillar1_desc": "Não no sistema, mas no ser humano.",
+    "pillar2_title": "Educação Relacional",
+    "pillar2_desc": "A pessoa só existe em relação, por e para o encontro.",
+    "pillar3_title": "Educação Emocional",
+    "pillar3_desc": "Autoconhecimento e reconhecimento de dons."
+  },
+  "targetAudience": {
+    "title": "Para Quem é Este Evento?",
+    "item1_title": "Donos de Escola",
+    "item1_desc": "Conheça metodologia inovadora para sua instituição",
+    "item2_title": "Diretores",
+    "item2_desc": "Transforme sua escola em espaço de encontro",
+    "item3_title": "Coordenadores",
+    "item3_desc": "Implemente educação relacional",
+    "item4_title": "Professores",
+    "item4_desc": "Aprenda metodologias de educação emocional",
+    "item5_title": "Psicólogos",
+    "item5_desc": "Amplie seu repertório profissional",
+    "item6_title": "Pais",
+    "item6_desc": "Eduque emocionalmente seus filhos em casa"
+  },
+  "partners": {
+    "title": "Respaldo Acadêmico & Apoio"
+  },
+  "location": {
+    "title": "Local do Evento",
+    "placeName": "Auditório Bento XVI",
+    "addressLine1": "Paróquia São Judas Tadeu",
+    "addressLine2": "Itabuna - BA",
+    "howToGetTitle": "Como chegar?",
+    "howToGetDesc": "Localizado em ponto central de fácil acesso. Estacionamento disponível nas imediações."
+  },
+  "faq": {
+    "title": "Perguntas Frequentes",
+    "q1": "O que é o UpToYou?",
+    "a1": "UpToYou é um programa de educação emocional que foca no crescimento pessoal e na melhoria da qualidade educativa através do autoconhecimento e do encontro interpessoal.",
+    "q2": "Preciso ter formação específica?",
+    "a2": "Não. O evento é aberto a educadores, pais, psicólogos e interessados no tema, embora cada sessão tenha um público-alvo sugerido.",
+    "q3": "Os eventos são pagos?",
+    "a3": "Não, a inscrição é gratuita, mas as vagas são limitadas.",
+    "q4": "Posso participar de mais de um evento?",
+    "a4": "Sim, você pode se inscrever em todas as atividades que forem pertinentes ao seu perfil.",
+    "q5": "Como funciona a tradução?",
+    "a5": "O evento contará com suporte para tradução consecutiva ou simultânea (a confirmar), garantindo a compreensão de todos.",
+    "q6": "A oficina é teórica ou prática?",
+    "a6": "A oficina do dia 17/12 é eminentemente prática e vivencial.",
+    "q7": "Posso levar minha escola para conhecer?",
+    "a7": "Sim! Recomendamos que diretores e coordenadores participem da Mesa Redonda no dia 16/12."
+  },
+  "registration": {
+    "title": "Inscrição Gratuita",
+    "description": "Garanta sua vaga preenchendo o formulário abaixo."
+  },
+  "footer": {
+    "description": "Transformando a educação através do encontro e do desenvolvimento emocional."
+  }
+}

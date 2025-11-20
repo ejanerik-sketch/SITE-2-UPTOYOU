@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { FormType } from '../types';
 import FadeIn from './FadeIn';
@@ -626,9 +627,6 @@ const RegistrationForm: React.FC = () => {
                 <button type="submit" className={`w-full ${activeTab === FormType.PF ? 'bg-brand-green hover:bg-green-700' : 'bg-brand-red hover:bg-red-700'} text-white font-bold py-4 rounded-lg shadow-lg transition-transform transform hover:scale-[1.01] flex items-center justify-center gap-2`}>
                   <Mail size={20} /> ENVIAR INSCRIÇÃO POR E-MAIL
                 </button>
-                <p className="text-xs text-center text-gray-500">
-                  Ao clicar, seu gerenciador de e-mail padrão será aberto com os dados preenchidos. Além disso, um arquivo CSV (tabela) com seus dados será baixado automaticamente.
-                </p>
               </div>
             </form>
           </div>
